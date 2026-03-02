@@ -1,13 +1,13 @@
 
-import chess.Piece;
+import chess.Board;
+import chess.Square;
 
 void main() {
-    Piece pawn = new Piece('P');
+    Board chessBoard = new Board();
+    chessBoard.genBoard();
 
-    System.out.println(pawn.getColour());
-    System.out.println(pawn.getType());
-
-    pawn.promote();
-    System.out.println(pawn.getType());
+    for (Map.Entry<String, Square> entry : chessBoard.boardArray.entrySet()) {
+        System.out.println(entry.getValue().cords);
+    }
 
 }
