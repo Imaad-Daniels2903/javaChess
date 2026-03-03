@@ -3,27 +3,31 @@ package chess;
 import chess.Piece;
 
 public class Square {
-    public Piece piece;
+    Piece piece;
     public Boolean empty = true;
-    public String cords;
+    String cords;
 
     public Square(String squareCords, Piece chessPiece) {
-        piece = chessPiece;
-        empty = false;
-        cords = squareCords;
+        this.piece = chessPiece;
+        this.empty = false;
+        this.cords = squareCords;
     }
 
     public Square(String squareCords) {
-        piece = null;
-        cords = squareCords;
+        this.piece = null;
+        this.cords = squareCords;
+    }
+
+    public void setPiece(Piece piece) {
+        this.piece = piece;
     }
 
     public void placePiece(Piece pieceBeingPlaced) {
-        piece = pieceBeingPlaced;
+        this.piece = pieceBeingPlaced;
     }
 
     public void emptySqaure() {
-        piece = null;
-        empty = true;
+        this.piece = null;
+        this.empty = true;
     }
 }
